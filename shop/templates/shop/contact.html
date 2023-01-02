@@ -1,0 +1,42 @@
+{% extends 'shop/basic.html'%}
+
+{% block title %} Contact- My Ecommerce Website {% endblock %}
+
+{% block body %} 
+<div class="container">
+    <form action="/shop/contact/" method="post">{% csrf_token %}
+    <div class="mb-3 my-4">
+        <label for="exampleFormControlInput1" class="form-label " >Name</label>
+        <input type="name" class="form-control" id="name" name="name" placeholder="Enter Your Name Here">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email Here">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Phone number</label>
+        <input type="tel" class="form-control" id="Phone" name="phone" placeholder="Enter Your Phone Number Here">
+      </div>
+
+      <div class="mb-3">
+        <label for="desc" class="form-label">How May We Help You ?</label>
+        <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+{% if submit %}
+alert("thank you for conacting with us. we will solve your problem as soon as possible")
+document.location = "/shop";
+{% endif %}
+
+</script>
+{% endblock %}
+

@@ -1,0 +1,24 @@
+{% extends 'shop/basic.html' %}
+
+{% block title %}
+  My Awsome Cart
+{% endblock %}
+
+{% block body %}
+<div class="container shadow-lg p-3 mb-5 bg-body rounded my-4">
+    <div class="col my-4">
+    <h2>Payment status regarding your order id {{response.ORDERID}}</h2>
+    {% if response.RESPCODE == '01' %}
+    ORDER WAS SUCCESS✅
+    {% else  %}
+    OOPS!! SOMETHING WENT WRONG!!
+    {% elif  %}
+    </div>
+</div>
+
+
+{% endblock %}
+{% block js %}
+  <script>
+  </script>
+{% endblock %}
